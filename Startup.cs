@@ -23,7 +23,7 @@ namespace LeanProd
 
             ConfigureDBContext(services, config);
 
-            if (config["ASPNETCORE_ENVIRONMENT"] == "Development")
+            if (config["ASPNETCORE_ENVIRONMENT"] != "Development")
                 {
                 services.AddTransient<ICommodityService, StubCommodityService>();
             }
